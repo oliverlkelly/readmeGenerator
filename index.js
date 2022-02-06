@@ -2,7 +2,6 @@
 const util = require('util');
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { title } = require('process');
 
 // TODO: Create an array of questions for user input
 const questions = [
