@@ -15,10 +15,14 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    const userInput = inquirer.prompt(questions);
+}
 
 // Function call to initialize app
 init();
