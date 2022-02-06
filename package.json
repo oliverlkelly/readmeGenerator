@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/oliverlkelly/readmeGenerator#readme",
   "dependencies": {
+    "cjs": "^0.0.11",
     "fs": "^0.0.1-security",
     "inquirer": "^8.2.0",
     "loader": "^2.1.1",
