@@ -69,8 +69,9 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {
+async function init() {
     const userInput = await inquirer.prompt(questions);
+    console.log(userInput);
     const user{
         async function getUserLink(){
             try{
