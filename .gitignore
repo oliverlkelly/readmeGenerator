@@ -1,0 +1,8 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore .ini files
+.ini
+
+#Node
+node_modules
