@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/oliverlkelly/readmeGenerator#readme",
   "dependencies": {
+    "axios": "^0.25.0",
     "cjs": "^0.0.11",
     "fs": "^0.0.1-security",
     "inquirer": "^8.2.0",

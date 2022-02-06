@@ -73,9 +73,12 @@ async function init() {
     const userInput = await inquirer.prompt(questions);
     console.log(userInput);
     const user = {
-        async function getUserLink(){
+        async getUserLink(){
             try{
-                .get(`https://api.github.com/users/${userInput.user}`);
+                let response = await axios.get(`https://api.github.com/users/${userInput.user}`).then(resp => {
+                    console.log(resp.data);
+                })
+                console.log(response.data);
                 return response.data;
             }
             catch (error){
@@ -83,6 +86,7 @@ async function init() {
             }
         }
     }
+    console.log(user.getUserLink().response);
 
     
 }
