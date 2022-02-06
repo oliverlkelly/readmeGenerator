@@ -2,9 +2,17 @@
 const util = require('util');
 const fs = require('fs');
 const inquirer = require('inquirer');
+const { title } = require('process');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
+    {
+        type: 'input',
+        message: 'What is the title of your project?',
+        name: title
+    }
+
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
