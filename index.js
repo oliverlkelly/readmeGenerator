@@ -72,7 +72,7 @@ function writeToFile(fileName, data) {
 async function init() {
     const userInput = await inquirer.prompt(questions);
     console.log(userInput);
-    const user{
+    const user = {
         async function getUserLink(){
             try{
                 .get(`https://api.github.com/users/${userInput.user}`);
