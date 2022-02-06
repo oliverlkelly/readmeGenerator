@@ -2,6 +2,7 @@
 const util = require('util');
 const fs = require('fs');
 const inquirer = require('inquirer');
+const axios = require('axios');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -48,6 +49,16 @@ const questions = [
             'The Unlicense'
         ],
         name: 'lInfo',
+    },
+    {
+        type: 'input',
+        message: 'What is your github username?',
+        name: 'user',
+    },
+    {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email',
     }
 
 ];
@@ -60,6 +71,19 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     const userInput = inquirer.prompt(questions);
+    const user{
+        async function getUserLink(){
+            try{
+                .get(`https://api.github.com/users/${userInput.user}`);
+                return response.data;
+            }
+            catch (error){
+                console.log(error);
+            }
+        }
+    }
+
+    
 }
 
 // Function call to initialize app
