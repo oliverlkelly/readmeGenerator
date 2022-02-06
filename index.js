@@ -70,7 +70,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    const userInput = inquirer.prompt(questions);
+    const userInput = await inquirer.prompt(questions);
     const user{
         async function getUserLink(){
             try{
