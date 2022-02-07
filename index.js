@@ -78,7 +78,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 async function init() {
     const userInput = await inquirer.prompt(questions);
-    writeToFile('README.md', userInput);
+    writeToFile('generatedREADME.md', userInput);
     console.log(userInput);
     // const user = {
     //     async getUserLink(){
