@@ -3,6 +3,7 @@ const util = require('util');
 const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -65,28 +66,35 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
+    const fileContents = generateMarkdown(data);
+    fs.writeFile(fileName, fileContents, err => {
+        if(err){
+            return console.log(err);
+        }
+        console.log('README generated.')
+    });
 }
 
 // TODO: Create a function to initialize app
 async function init() {
     const userInput = await inquirer.prompt(questions);
+    writeToFile('README.md', userInput);
     console.log(userInput);
-    const user = {
-        async getUserLink(){
-            try{
-                let response = await axios.get(`https://api.github.com/users/${userInput.user}`).then(resp => {
-                    console.log(resp.data);
-                })
-                console.log(response.data);
-                return response.data;
-            }
-            catch (error){
-                console.log(error);
-            }
-        }
-    }
-    console.log(user.getUserLink().response);
+    // const user = {
+    //     async getUserLink(){
+    //         try{
+    //             let response = await axios.get(`https://api.github.com/users/${userInput.user}`).then(resp => {
+    //                 console.log(resp.data);
+    //             })
+    //             console.log(response.data);
+    //             return response.data;
+    //         }
+    //         catch (error){
+    //             console.log(error);
+    //         }
+    //     }
+    // }
+    // console.log(user.getUserLink().response);
 
     
 }
