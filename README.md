@@ -12,9 +12,9 @@ This project allowed me to learn more about the following;
 
 This project is a node project, you must run it in the terminal after installing the NPM modules, with the command "node index.js"
 Node Modules to install:
-    * FS
-    * Inquirer
-    * Node-fetch
+* FS
+* Inquirer
+* Node-fetch
 
 ## Usage
 
