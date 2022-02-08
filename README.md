@@ -14,7 +14,7 @@ This project is a node project, you must run it in the terminal after installing
 Node Modules to install:
 * FS
 * Inquirer
-* Node-fetch
+* Axios
 
 ## Usage
 
