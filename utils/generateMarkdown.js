@@ -75,6 +75,7 @@ function generateMarkdown(data) {
 * [Usage](#usage)
 * [Contributing](#contribution-guidlines)
 * [Testing](#test-instructions)
+* [Questions](#questions)
 
 ## The Task
 
@@ -96,6 +97,10 @@ ${data.cInfo}
 
 ${data.tInfo}
 ${licenseSection}
+## Questions
+
+https://github.com/${data.user}
+
 ---`;
 }
 

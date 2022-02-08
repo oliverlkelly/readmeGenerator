@@ -47,7 +47,8 @@ const questions = [
             'Creative Commons Zero v1.0 Universal',
             'Eclipse Public License',
             'Mozilla Public Licence 2.0',
-            'The Unlicense'
+            'The Unlicense',
+            'None'
         ],
         name: 'lInfo',
     },
@@ -78,23 +79,22 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 async function init() {
     const userInput = await inquirer.prompt(questions);
+    async function getUserLink(){
+        try{
+            const config = {
+                method: 'get',
+                url: `https://api.github.com/users/${userInput.user}`,
+            }
+            let response = await axios(config);
+            return response.data;
+        }
+        catch (error){
+            console.log(error);
+        }
+    }
+    console.log(getUserLink().html_url);
     writeToFile('generatedREADME.md', userInput);
     console.log(userInput);
-    // const user = {
-    //     async getUserLink(){
-    //         try{
-    //             let response = await axios.get(`https://api.github.com/users/${userInput.user}`).then(resp => {
-    //                 console.log(resp.data);
-    //             })
-    //             console.log(response.data);
-    //             return response.data;
-    //         }
-    //         catch (error){
-    //             console.log(error);
-    //         }
-    //     }
-    // }
-    // console.log(user.getUserLink().response);
 
     
 }
